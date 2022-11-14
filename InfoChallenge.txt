@@ -1,0 +1,17 @@
+Suposiciones
+- El ID del empleado se pasa como valor al crear un nuevo empleado, 
+ya que es un ID amigable que el empleado pueda recordar.
+- El ID es case-sensitive.
+- Los pagos son enteros.
+- Se pueden introducir multiples turnos durante el día.
+
+Mejoras
+- Manejo de errores
+- ¿Solamente introducir un turno al día?
+  - Tenemos la suposición de varios turnos al día, tendríamos que contar las horas totales de ese día para revisar
+    si trabajó más de las 8 horas regalmentarias.
+- Trabajar con "retries" para cualquier situación en que la conexión a la base de datos falle.
+  - En especial en el caso de actualizar la salida de un empleado, ya que también se actualiza la tabla de pagos
+    en el dado caso que falle la llamada de registrar la salida y el pago si se actualizó, falta el caso en el que no se pueda
+    retroceder la actualización del pago por ee turno.
+
